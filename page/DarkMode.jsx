@@ -1,13 +1,21 @@
-export default function DarkMode({ item }) {
+export default function DarkMode({ item, isSingle }) {
     return (
-        <div key={item.nim} className="flex md:flex-col border-2 rounded-lg bg-gray-700 h-54 w-full items-center text-left md:w-1/4 lg:w-1/6">
-            <div className='bg-black md:border-b-2 rounded-l-lg md:rounded-bl-none md:rounded-t-lg bg-opacity-50 h-full flex justify-center items-center w-1/3 sm:w-1/3 md:w-full lg:w-full'>
+        <div
+            key={item.nim}
+            className={`flex ${isSingle ? 'w-full' : 'w-full md:w-1/4 lg:w-1/6'} 
+                        md:flex-col border-2 rounded-lg bg-gray-700 h-54 items-center text-left`}
+            style={{
+                maxWidth: isSingle ? '100%' : 'auto',
+                flexBasis: isSingle ? '100%' : 'auto',
+            }}
+        >
+            <div className="bg-black md:border-b-2 rounded-l-lg md:rounded-bl-none md:rounded-t-lg bg-opacity-50 h-full flex justify-center items-center w-1/3 sm:w-1/3 md:w-full lg:w-full">
                 <img
                     src={item.foto || 'profile.png'}
                     className="border-2 rounded-full object-cover h-32 w-32 m-2"
                 />
             </div>
-            <div className="h-42 flex flex-col justify-between md:rounded-t-none md:rounded-bl-lg rounded-r-lg  bg-black bg-opacity-50 text-white p-2.5 w-full">
+            <div className="h-42 flex flex-col justify-between md:rounded-t-none md:rounded-bl-lg rounded-r-lg bg-black bg-opacity-50 text-white p-2.5 w-full">
                 <div>
                     <p className="font-bold text-sm font-mono underline underline-offset-2">{item.nama}</p>
                     <p className="font-bold text-[10px] font-mono">{item.nim}</p>
