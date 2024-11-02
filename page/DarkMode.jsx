@@ -12,7 +12,7 @@ export default function DarkMode({ item }) {
                     <p className="font-bold text-[6px] sm:text-xs md:text-sm font-mono underline underline-offset-2">{item.nama}</p>
                     <p className="font-bold text-[5px] sm:text-[7px] md:text-[10px] font-mono">{item.nim}</p>
                 </div>
-                <div className="overflow-hidden overflow-y-auto w-full py-1 flex flex-col space-y-1 text-[4px] sm:text-[6px] md:text-[9px] font-bold font-mono no-scrollbar h-18 md:h-28">
+                <div className="overflow-hidden overflow-y-auto w-full py-1 flex flex-col space-y-1 text-[4px] sm:text-[5px] md:text-[7px] font-bold font-mono no-scrollbar h-18 md:h-28">
                 <div className="flex flex-col space-y-1">
                         <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Status FRS</div>
