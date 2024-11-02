@@ -1,54 +1,62 @@
 export default function DarkMode({ item }) {
     return (
-        <div key={item.nim} className="flex md:flex-col border-2 rounded-lg bg-gray-700 h-54 w-full items-center text-left md:w-1/4 lg:w-1/6">
-            <div className='bg-black md:border-b-2 rounded-l-lg md:rounded-bl-none md:rounded-t-lg bg-opacity-50 h-full flex justify-center items-center w-1/3 sm:w-1/3 md:w-full lg:w-full'>
+        <div key={item.nim} className="flex flex-row md:flex-col border rounded-lg bg-gray-700 h-auto w-full items-center text-left md:w-1/4 lg:w-1/6">
+            <div className="bg-black border-r md:border-b-2 rounded-l-lg md:rounded-bl-none md:rounded-t-lg bg-opacity-50 h-full flex justify-center items-center w-1/4 sm:w-1/3 md:w-full lg:w-full p-1">
                 <img
                     src={item.foto || 'profile.png'}
-                    className="border-2 rounded-full object-cover h-32 w-32 m-2"
+                    className="border rounded-full object-cover h-16 w-16 sm:h-20 sm:w-20 md:h-32 md:w-32"
                 />
             </div>
-            <div className="h-42 flex flex-col justify-between md:rounded-t-none md:rounded-bl-lg rounded-r-lg  bg-black bg-opacity-50 text-white p-2.5 w-full">
+            <div className="flex flex-col justify-between rounded-r-lg md:rounded-t-none md:rounded-bl-lg bg-black bg-opacity-50 text-white p-2 w-3/4 sm:w-full">
                 <div>
-                    <p className="font-bold text-sm font-mono underline underline-offset-2">{item.nama}</p>
-                    <p className="font-bold text-[10px] font-mono">{item.nim}</p>
+                    <p className="font-bold text-[6px] sm:text-xs md:text-sm font-mono underline underline-offset-2">{item.nama}</p>
+                    <p className="font-bold text-[5px] sm:text-[7px] md:text-[10px] font-mono">{item.nim}</p>
                 </div>
-                <div className="overflow-hidden overflow-y-auto w-full py-2 flex flex-col space-y-1 text-[5px] md:text-[9px] font-bold font-mono no-scrollbar h-28">
-                    <div className="flex items-center">
-                        <div className="flex-grow w-12">Status FRS</div>
-                        <div className="w-2 text-center">:</div>
-                        <div className="flex-grow w-24">{item.status_frs || 'Belum'}</div>
-                    </div>
-                    <div className="flex items-center">
-                        <div className="flex-grow w-12">Status Mhs</div>
-                        <div className="w-2 text-center">:</div>
-                        <div className="flex-grow w-24">{item.status_mhs || 'Non Aktif'}</div>
-                    </div>
-                    <div className="flex items-center">
-                        <div className="flex-grow w-12">SKS Lulus</div>
-                        <div className="w-2 text-center">:</div>
-                        <div className="flex-grow w-24">{item.sks_lulus || 0}</div>
-                    </div>
-                    <div className="flex items-center">
-                        <div className="flex-grow w-12">IPK</div>
-                        <div className="w-2 text-center">:</div>
-                        <div className="flex-grow w-24">{item.ipk || 'N/A'}</div>
+                <div className="overflow-hidden overflow-y-auto w-full py-1 flex flex-col space-y-1 text-[4px] sm:text-[6px] md:text-[9px] font-bold font-mono no-scrollbar h-18 md:h-28">
+                <div className="flex flex-col space-y-1">
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Status FRS</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.status_frs || 'Tidak ada info'}</div>
+                        </div>
                     </div>
                     <div className="flex flex-col space-y-1">
                         <div className="flex items-start flex-wrap">
-                            <div className="flex-grow w-12">Alamat</div>
+                            <div className="flex-grow w-10 sm:w-12">Status MHS</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.status_mhs || 'Tidak ada info'}</div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col space-y-1">
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">SKS Lulus</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.sks_lulus || 'Tidak ada info'}</div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col space-y-1">
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">IPK</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.ipk || 'N/A'}</div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col space-y-1">
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Alamat</div>
                             <div className="w-2 text-center">:</div>
                             <div className="flex-grow w-24 break-words">{item.alamat || 'Alamat tidak tersedia'}</div>
                         </div>
                     </div>
                     <div className="flex flex-col space-y-1">
                         <div className="flex items-start flex-wrap">
-                            <div className="flex-grow w-12">Info</div>
+                            <div className="flex-grow w-10 sm:w-12">Info</div>
                             <div className="w-2 text-center">:</div>
-                            <div className="flex-grow w-24 text-justify break-words">{item.info || 'Tidak ada info'}</div>
+                            <div className="flex-grow w-24 break-words">{item.info || 'Tidak ada info'}</div>
                         </div>
                     </div>
                 </div>
-                <button className="mt-2 rounded text-center px-2 py-1 bg-green-500 hover:bg-green-700 text-white text-xs font-bold">Detail</button>
+                <button className="mt-1 rounded text-center px-1 py-1 bg-green-500 hover:bg-green-700 text-white text-[6px] sm:text-xs font-bold">Detail</button>
             </div>
         </div>
     );
