@@ -25,7 +25,7 @@ export default function Card() {
     return (
         <>
             <div className='flex flex-col w-full h-full text-center px-5'>
-                <p className='text-[12px] md:text-[15px] lg:text-[17px]'>Bimbingan</p>
+                <p className='font bold text-[12px] md:text-[15px] lg:text-[17px]'>Bimbingan</p>
                 <div className='py-2'>
                 <p className='my-4 font-bold text-[12px] md:text-[15px] lg:text-[17px]'>Teknik Informatika - S1 Regular Pagi</p>
                     <div className='flex flex-wrap gap-2 w-full h-full justify-center '>
