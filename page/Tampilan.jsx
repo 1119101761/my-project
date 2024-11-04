@@ -25,7 +25,7 @@ export default function Card() {
     return (
         <>
             <div className='flex flex-col w-full h-full text-center px-5'>
-                <p className='text-lg font-bold'>Bimbingan</p>
+                <p className='text-[12px] md:text-[15px] lg:text-[17px]'>Bimbingan</p>
                 <div className='py-2'>
                 <p className='my-4 font-bold text-[12px] md:text-[15px] lg:text-[17px]'>Teknik Informatika - S1 Regular Pagi</p>
                     <div className='flex flex-wrap gap-2 w-full h-full justify-center '>
@@ -34,7 +34,7 @@ export default function Card() {
                         ))}
                     </div>
                 </div>
-                <p className=' mt-5 py-2 font-bold sm:text-[12px] md:text-[15px] lg:text-[17px]'> Teknik Informatika - S1 Regular Malam</p>
+                <p className=' mt-5 py-2 font-bold text-[12px] md:text-[15px] lg:text-[17px]'> Teknik Informatika - S1 Regular Malam</p>
                 <div className='flex flex-wrap gap-2 w-full h-full justify-center mb-10'>
                     {data.filter(item => (item.kategori || '').toLowerCase() === 'malam').map(item => (
                         <DarkMode key={item.nim} item={item} />
