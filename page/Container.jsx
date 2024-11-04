@@ -22,7 +22,7 @@ export default function Container({ children }) {
                         <a href="#" className="text-white text-sm font-semibold transition hover:text-gray-400">Tentang Kami</a>
                     </nav>
                 </div>
-                <div className="relative md:hidden">
+                <div className="relative ">
                     <img
                         src="burger-bar.png"
                         alt="Menu"
