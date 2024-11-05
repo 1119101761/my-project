@@ -1,7 +1,7 @@
-import { DarkModeContext } from '../page/DarkModeContext';
+import { DarkModeContext } from './DarkModeContext';
 import { useContext } from 'react';
 
-export default function DarkMode({ item }) {
+export default function Card({ item }) {
     const { darkMode } = useContext(DarkModeContext); 
 
     return (

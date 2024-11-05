@@ -1,10 +1,10 @@
 import Container from "./Container";
-import Cards from "./Tampilan"
+import Tampilan from "./Tampilan"
 
-export default function PageCards() {
+export default function PageTampilan() {
     return (
         <Container>
-            <Cards />
+            <Tampilan />
         </Container>
     );
 }
