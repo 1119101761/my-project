@@ -5,17 +5,20 @@ import CardsA from '../page/CardsA';
 import CardsB from '../page/CardB';
 import Auth from '../page/Autentikasi';
 import './App.css';
+import { DarkModeProvider } from '../page/DarkModeContext';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Cards />} />
-        <Route path="/carda" element={<CardsA />} />
-        <Route path="/cardb" element={<CardsB />} />
-        <Route path="/auth" element={<Auth />} />
-      </Routes>
-    </Router>
+    <DarkModeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Cards />} />
+          <Route path="/carda" element={<CardsA />} />
+          <Route path="/cardb" element={<CardsB />} />
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </Router>
+    </DarkModeProvider>
   );
 }
 

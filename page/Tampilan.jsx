@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../server';
 import DarkMode from './DarkMode';
-// import DarkMode from './DarkMode';
 
 export default function Card() {
     const [data, setData] = useState([]);
