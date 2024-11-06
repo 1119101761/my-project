@@ -7,9 +7,9 @@ export default function Card({ item }) {
     return (
         <div
             key={item.nim}
-            className={` flex flex-row sm:flex-col md:flex-col border-2 rounded-lg shadow-xl ${darkMode ? 'bg-gray-800 border-white ' : 'bg-orange-200 bg-opacity-35 border-gray-800 '} h-[180px] sm:h-auto md:h-auto lg:h-auto w-full items-center text-left  `}
+            className={` flex flex-row sm:flex-col md:flex-col border-2 rounded-lg shadow-xl ${darkMode ? 'bg-gray-800 border-white ' : 'bg-orange-200 bg-opacity-35 border-gray-700 '} h-[180px] sm:h-auto md:h-auto lg:h-auto w-full items-center text-left  `}
         >
-            <div className={`max-sm:border-r-2 ${darkMode ? '' : 'border-black'} sm:border-b-2 md:border-b-2 lg:border-b-2 br-border-none sm:rounded-bl-none sm:rounded-tr-lg md:border-b md:border-b rounded-l-sm md:rounded-bl-none md:rounded-t-lg h-full flex justify-center items-center w-2/4 sm:w-full md:w-full lg:w-full sm:p-2 md:p-2 lg:p-2 `}>
+            <div className={`max-sm:border-r-2 ${darkMode ? '' : 'border-gray-600'} sm:border-b-2 md:border-b-2 lg:border-b-2 br-border-none sm:rounded-bl-none sm:rounded-tr-lg md:border-b md:border-b rounded-l-sm md:rounded-bl-none md:rounded-t-lg h-full flex justify-center items-center w-2/4 sm:w-full md:w-full lg:w-full sm:p-2 md:p-2 lg:p-2 `}>
                 <img
                     src={item.foto || 'profile.png'}
                     className={`${darkMode ? 'border-white' : 'border-gray-800'} rounded-l-md object-cover h-full w-full sm:rounded-full sm:border-2 rounded-l-md md:border-2 lg:border-2 md:rounded-full lg:rounded-full sm:h-24 sm:w-24 md:h-24 md:w-24 lg:h-28 lg:w-28`}
