@@ -18,7 +18,7 @@ export default function Card({ item }) {
             <div className='relative w-full h-full'>
                 <img
                     src={'x.png'}
-                    className={`${darkMode ? 'opacity-0 h-44' : 'h-44'} w-full h-full object-cover rounded-r-md sm:rounded-r-none sm:rounded-b-md`}
+                    className={`${darkMode ? 'opacity-0 h-44 md:h-44 lg:h-44' : 'h-44 md:h-44 lg:h-44'} w-full h-full object-cover rounded-r-md sm:rounded-r-none sm:rounded-b-md`}
                 />
                 <div className={`sm:rounded-b-md absolute inset-0 z-full w-full flex h-full flex-col justify-between rounded-r-md sm:rounded-tr-none md:rounded-t-none md:rounded-bl-lg  ${darkMode ? 'bg-black bg-opacity-30 ' : 'text-black'}  p-2 w-3/4 sm:w-full px-4`}>
                     <div>
