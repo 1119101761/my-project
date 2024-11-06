@@ -30,7 +30,7 @@ export default function Card({ item }) {
                             <div className="flex items-start flex-wrap">
                                 <div className="flex-grow w-10 sm:w-12">Status FRS</div>
                                 <div className="w-2 text-center">:</div>
-                                <div className="flex-grow w-24 break-words">{item.status_frs || 'Tidak ada info'}</div>
+                                <div className="flex-grow w-24 break-words">{item.status_frs || 'Belum'}</div>
                             </div>
                         </div>
                         <div className="flex flex-col space-y-1">
