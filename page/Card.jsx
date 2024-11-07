@@ -1,9 +1,13 @@
 import { DarkModeContext } from './DarkModeContext';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Card({ item }) {
     const { darkMode } = useContext(DarkModeContext);
-
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/detail');
+    };
     return (
         <div
             key={item.nim}
@@ -18,8 +22,7 @@ export default function Card({ item }) {
             <div className='relative w-full h-full'>
                 <img
                     src={'x.png'}
-                    className={`${darkMode ? 'opacity-0 h-44 md:h-44 lg:h-44' : 'h-44 md:h-44 lg:h-44'} w-full h-full object-cover rounded-r-md sm:rounded-r-none sm:rounded-b-md`}
-                />
+                    className={`${darkMode ? 'opacity-0 h-44 md:h-44 lg:h-44' : 'h-44 md:h-44 lg:h-44'} w-full h-full object-cover rounded-r-md sm:rounded-r-none sm:rounded-b-md`} />
                 <div className={`sm:rounded-b-md absolute inset-0 z-full w-full flex h-full flex-col justify-between rounded-r-md sm:rounded-tr-none md:rounded-t-none md:rounded-bl-lg  ${darkMode ? 'bg-black bg-opacity-30 ' : 'text-black'}  p-2 w-3/4 sm:w-full px-4`}>
                     <div>
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
@@ -69,7 +72,9 @@ export default function Card({ item }) {
                             </div>
                         </div>
                     </div>
-                    <button className={`mt-1.5 rounded text-center px-1 py-1 text-[10px] sm:text-[8px] md:text-[8px] lg:text-[8px] font-bold ${darkMode ? 'bg-green-500 hover:bg-green-700' : 'bg-orange-400  hover:bg-orange-600 text-black'}`}>Details</button>
+                    <button 
+                    onClick={handleClick}
+                    className={`mt-1.5 rounded text-center px-1 py-1 text-[10px] sm:text-[8px] md:text-[8px] lg:text-[8px] font-bold ${darkMode ? 'bg-green-500 hover:bg-green-700' : 'bg-orange-400  hover:bg-orange-600 text-black'}`}>Details</button>
                 </div>
             </div>
         </div>
