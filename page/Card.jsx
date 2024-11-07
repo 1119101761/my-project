@@ -1,13 +1,14 @@
 import { DarkModeContext } from './DarkModeContext';
-import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
 
 export default function Card({ item }) {
+    const [menuOpen, setMenuOpen] = useState(false);
     const { darkMode } = useContext(DarkModeContext);
-    const navigate = useNavigate();
-    const handleClick = () => {
-        navigate('/detail');
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
     };
+
+
     return (
         <div
             key={item.nim}
@@ -23,7 +24,7 @@ export default function Card({ item }) {
                 <img
                     src={'x.png'}
                     className={`${darkMode ? 'opacity-0 h-44 md:h-44 lg:h-44' : 'h-44 md:h-44 lg:h-44'} w-full h-full object-cover rounded-r-md sm:rounded-r-none sm:rounded-b-md`} />
-                <div className={`sm:rounded-b-md absolute inset-0 z-full w-full flex h-full flex-col justify-between rounded-r-md sm:rounded-tr-none md:rounded-t-none md:rounded-bl-lg  ${darkMode ? 'bg-black bg-opacity-30 ' : 'text-black'}  p-2 w-3/4 sm:w-full px-4`}>
+                <div className={`sm:rounded-b-md absolute inset-0 w-full flex h-full flex-col justify-between rounded-r-md sm:rounded-tr-none md:rounded-t-none md:rounded-bl-lg  ${darkMode ? 'bg-black bg-opacity-30 ' : 'text-black'}  p-2 w-3/4 sm:w-full px-4`}>
                     <div>
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
                         <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
@@ -72,10 +73,25 @@ export default function Card({ item }) {
                             </div>
                         </div>
                     </div>
-                    <button 
-                    onClick={handleClick}
-                    className={`mt-1.5 rounded text-center px-1 py-1 text-[10px] sm:text-[8px] md:text-[8px] lg:text-[8px] font-bold ${darkMode ? 'bg-green-500 hover:bg-green-700' : 'bg-orange-400  hover:bg-orange-600 text-black'}`}>Details</button>
+                    <div className='relative '>
+                        <button
+                            onClick={toggleMenu}
+                            className={`z-10 w-full mt-1.5 rounded text-center px-1 py-1 text-[10px] sm:text-[8px] md:text-[8px] lg:text-[8px] font-bold ${darkMode ? 'bg-green-500 hover:bg-green-700' : 'bg-orange-400  hover:bg-orange-600 text-black'}`}>Details</button>
+                        {menuOpen && (
+                            <div className="font-bold font-mono z-50 absolute text-xs w-full bg-orange-300 text-black rounded-md border border-gray-700 mt-2">
+                                <a href="keuangan" className="block px-4 py-2 w-full hover:bg-gray-400">Keuangan</a>
+                                <a href="nilaitranskrip" className="block px-4 py-2 hover:bg-gray-400">Nilai Transkrip</a>
+                                <a href="nilaipersemester" className="block px-4 py-2 hover:bg-gray-400">Nilai Per-Semester</a>
+                                <a href="detail" className="block px-4 py-2 hover:bg-gray-400">Detail FRS</a>
+                                <div className='flex items-center w-full border-t border-gray-700 d'>
+                                    <a href="detail" className="block border-r border-gray-700 px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-bl-md">Biodata</a>
+                                    <a href="history" className="block px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-br-md">History</a>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
+
             </div>
         </div>
     );

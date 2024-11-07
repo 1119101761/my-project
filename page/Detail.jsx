@@ -21,12 +21,12 @@ export default function detail({ item }) {
     };
 
     return (
-        <div className="flex w-full h-full ">
+        <div className="flex w-full h-full">
             <div className='relative flex rounded-lg flex-col sm:flex-row md:flex-row lg:flex-row w-full h-auto border-2 border-gray-600'>
                 <div className='md:w-1/3 md:h-56 h-auto p-2 md:border md:border-black md:border-r'>
                 <div className='flex md:border border-black justify-center p-2 '>
                     <img
-                        src="x.png"
+                        src="profile.png"
                         className='rounded-full md:rounded-none border border-gray-600 border-2 md:border-none h-32 w-32 md:h-full md:w-full object-cover'
                     />
                     </div>
