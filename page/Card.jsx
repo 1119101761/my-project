@@ -82,7 +82,7 @@ export default function Card({ item }) {
                                 <a href="keuangan" className="block px-4 py-2 w-full hover:bg-gray-400">Keuangan</a>
                                 <a href="nilaitranskrip" className="block px-4 py-2 hover:bg-gray-400">Nilai Transkrip</a>
                                 <a href="nilaipersemester" className="block px-4 py-2 hover:bg-gray-400">Nilai Per-Semester</a>
-                                <a href="detail" className="block px-4 py-2 hover:bg-gray-400">Detail FRS</a>
+                                <a href="detailFrs" className="block px-4 py-2 hover:bg-gray-400">Detail FRS</a>
                                 <div className='flex items-center w-full border-t border-gray-700 d'>
                                     <a href="detail" className="block border-r border-gray-700 px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-bl-md">Biodata</a>
                                     <a href="history" className="block px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-br-md">History</a>
