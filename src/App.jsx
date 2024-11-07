@@ -3,7 +3,7 @@ import Auth from '../page/Autentikasi';
 import './App.css';
 import { DarkModeProvider } from '../page/DarkModeContext';
 import Tampilan from '../page/PageTampilan';
-import PageDetail from '../page/pageDetail';
+import PageDetail from '../page/PageDetail';
 
 function App() {
   return (
