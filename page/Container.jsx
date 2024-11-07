@@ -14,7 +14,7 @@ export default function Container({ children }) {
     };
 
     return (
-        <div className="relative flex flex-col min-h-screen">
+        <div className="relative flex flex-col min-h-screen min-w-screen-lg">
             <header className={`fixed top-0 left-0 w-full h-16 flex justify-between items-center shadow-md z-30 px-4 md:px-6 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
                 <div className="flex items-center space-x-4">
                     <div className="h-full w-24 overflow-hidden">
@@ -50,7 +50,7 @@ export default function Container({ children }) {
                     </div>
                 </div>
             </header>
-            <main className={`flex-grow flex flex-col items-center justify-center w-full h-full py-20 px-4 md:px-10 relative z-10 ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-150 '}`}>
+            <main className={` flex-grow flex flex-col items-center justify-center w-full h-full py-20 px-4 md:px-10 relative z-10 ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-150 '}`}>
                 {children}
             </main>
 
