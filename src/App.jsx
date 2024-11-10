@@ -3,7 +3,7 @@ import Auth from '../page/Autentikasi';
 import './App.css';
 import { DarkModeProvider } from '../page/DarkModeContext';
 import Tampilan from '../page/PageTampilan';
-import PageDetail from '../page/PageDetail';
+import Biodata from '../page/PageBiodata';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Tampilan />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/detail" element={<PageDetail />} />
+          <Route path="/biodata" element={<Biodata />} />
         </Routes>
       </Router>
     </DarkModeProvider>

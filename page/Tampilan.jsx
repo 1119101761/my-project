@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../server';
 import Card from './Card';
-
+import Biodata from './Biodata'
 export default function Tampilan() {
     const [data, setData] = useState([]);
 

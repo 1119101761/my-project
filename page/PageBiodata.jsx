@@ -1,10 +1,10 @@
 import Container from "./Container";
-import CardDetail from "./Detail";
+import Biodata from "./Biodata";
 
 export default function PageDetail() {
     return (
         <Container>
-            <CardDetail />
+            <Biodata />
         </Container>
     );
 }

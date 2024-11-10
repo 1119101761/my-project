@@ -1,11 +1,28 @@
 import { DarkModeContext } from './DarkModeContext';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import Biodata from './Biodata';
+import { supabase } from '../server';
 
 export default function Card({ item }) {
+    const [selectedItem, setSelectedItem] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
     const { darkMode } = useContext(DarkModeContext);
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
+    };
+
+    const fetchBiodata = async () => {
+        const { data, error } = await supabase
+            .from('mahasiswa')
+            .select('*')
+            .eq('nim', item.nim)
+        if (error) {
+            console.error("Error fetching biodata:", error);
+            return;
+        }
+        setSelectedItem(data[0]); // Simpan data yang diambil
+        setMenuOpen(false); // Tutup menu
+        console.log(data)
     };
 
 
@@ -84,14 +101,14 @@ export default function Card({ item }) {
                                 <a href="nilaipersemester" className="block px-4 py-2 hover:bg-gray-400">Nilai Per-Semester</a>
                                 <a href="detailFrs" className="block px-4 py-2 hover:bg-gray-400">Detail FRS</a>
                                 <div className='flex items-center w-full border-t border-gray-700 d'>
-                                    <a href="detail" className="block border-r border-gray-700 px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-bl-md">Biodata</a>
+                                    <button onClick={fetchBiodata} className="block border-r border-gray-700 px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-bl-md">Biodata</button>
                                     <a href="history" className="block px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-br-md">History</a>
                                 </div>
                             </div>
                         )}
+                        {selectedItem && <Biodata item={selectedItem} />}
                     </div>
                 </div>
-
             </div>
         </div>
     );
