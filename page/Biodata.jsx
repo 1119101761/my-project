@@ -12,7 +12,7 @@ export default function Biodata({ item }) {
                     <img
                         src={item.foto}
                         alt="Profile"
-                        className='border-2 md:rounded-br-full sm:border-none md:border-none lg:border-none rounded-full sm:rounded-none md:rounded-none lg:rounded-none sm:h-1/2 sm-w-full border-gray-600 h-32 w-32 md:h-full md:w-full lg:h-full lg:w-full object-cover'
+                        className='border-2 md:rounded-br-full sm:border-none md:border-none lg:border-none rounded-full sm:rounded-none md:rounded-none lg:rounded-none sm:h-full sm-w-full border-gray-600 h-32 w-32 md:h-full md:w-full lg:h-full lg:w-full object-cover'
                     />
                 </div>
                 <div className='flex-grow  '>
