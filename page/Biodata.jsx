@@ -20,11 +20,11 @@ export default function Biodata({ item }) {
                     className={`${darkMode ? 'opacity-0 h-auto md:h-auto lg:h-auto' : 'h-auto md:h-auto lg:h-auto'} w-full h-full object-cover`}
                 />
                 <div className='absolute inset-0 p-4'>
-                    <div className='border-b-2 border-black'>
+                    <div className='border-none'>
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
                         <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
                     </div>
-                    <div className="font-bold  overflow-y-auto w-full py-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar h-auto">
+                    <div className="font-bold border border-black overflow-y-auto w-full py-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar h-auto">
                         <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Jurusan</div>
                             <div className="w-2 text-center">:</div>
