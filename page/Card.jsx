@@ -128,7 +128,7 @@ export default function Card({ item }) {
                             <h2 className="text-lg font-bold">Biodata</h2>
                             <button onClick={closeModal} className="text-gray-500 hover:text-gray-700">&times;</button>
                         </div>
-                        <div className="p-4">
+                        <div className="">
                             {selectedItem && <Biodata item={selectedItem} />}
                         </div>
                     </div>

@@ -6,88 +6,99 @@ export default function Biodata({ item }) {
     const { darkMode } = useContext(DarkModeContext);
 
     return (
-        <div key={item.nim} className="flex w-full h-full">
-            <div className={`relative flex rounded-lg flex-col sm:flex-row w-full h-auto border-2 ${darkMode ? 'border-white' : 'border-gray-600'}`}>
-                <div className='md:w-1/3 max-sm:p-2 max-sm:border-b-2 sm:border-r-2 md:border-r border-gray-600 flex justify-center items-center'>
-                    <img
-                        src={item.foto}
-                        alt="Profile"
-                        className='border-2 md:rounded-br-full sm:border-none md:border-none lg:border-none rounded-full sm:rounded-none md:rounded-none lg:rounded-none sm:h-full sm-w-full border-gray-600 h-32 w-32 md:h-full md:w-full lg:h-full lg:w-full object-cover'
-                    />
-                </div>
-                <div className='flex-grow  '>
-                    <div className='p-2 border-b-2 border-gray-600'>
-                    <p className='font-bold text-sm'>{item.nama}</p>
-                    <p className='text-xs font-bold'>{item.nim}</p>
+        <div key={item.nim} className="flex flex-col">
+            <div className='lg:row-span-2 sm:w-1/3 max-sm:p-2 max-sm:border-b-2 sm:border-r-2 lg:border-none border-gray-600 flex justify-center items-center'>
+                <img
+                    src={item.foto}
+                    alt="Profile"
+                    className='border-2 md:rounded-br-full sm:border-none lg:rounded-lg rounded-full sm:rounded-none h-32 w-32 sm:h-full sm:w-full lg:h-auto lg:w-auto object-cover border-gray-600'
+                />
+            </div>
+            <div className='relative'>
+                <img
+                    src={'x.png'}
+                    className={`${darkMode ? 'opacity-0 h-44 md:h-44 lg:h-44' : 'h-44 md:h-44 lg:h-44'} w-full h-full object-cover rounded-r-md sm:rounded-r-none sm:rounded-b-md`}
+                />
+                <div className='absolute inset-0 p-4'>
+                    <div className='border-b-2'>
+                        <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
+                        <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
                     </div>
-                    <div className='p-2 space-y-2 text-xs'>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Jurusan</span>
-                            <span className="flex-grow">: {item.jurusan}</span>
+                    <div className="font-bold overflow-hidden overflow-y-auto w-full py-1 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px]  no-scrollbar h-full">
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Jurusan</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Angkatan</span>
-                            <span className="flex-grow">: {item.angkatan}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Angkatan</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.angkatan || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Jalur Kuliah</span>
-                            <span className="flex-grow">: {item.jalur_kuliah}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Jalur Kuliah</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.jalur_kuliah || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Tempat/Tgl Lahir</span>
-                            <span className="flex-grow">: {item.tempat_lahir}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Tempat/Tgl Lahir</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.tempat_lahir || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Agama</span>
-                            <span className="flex-grow">: {item.agama}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Agama</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.agama || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Jenis Kelamin</span>
-                            <span className="flex-grow">: {item.jenis_kelamin}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Jenis Kelamin</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.jenis_kelamin || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Status</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.status || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Pekerjaan</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.pekerjaan || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Alamat</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.alamat || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Asal Sekolah</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.asal_sekolah || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Tahun Lulus</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.kelulusan || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">No HP</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.nomer_pribadi || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Email</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.email || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Minat/Hobi</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.hobi || 'Tidak ada info'}</div>
                         </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
-                        </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
-                        </div>
-                        <div className="flex">
-                            <span className="w-1/3 font-semibold">Status</span>
-                            <span className="flex-grow">: {item.status}</span>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Organisasi</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.organisasi || 'Tidak ada info'}</div>
                         </div>
                     </div>
                 </div>
