@@ -17,9 +17,9 @@ export default function Biodata({ item }) {
             <div className='relative w-full h-full'>
                 <img
                     src={'x.png'}
-                    className={`${darkMode ? 'opacity-0 h-auto md:h-auto lg:h-auto' : 'h-auto md:h-auto lg:h-auto'} w-full h-full object-cover`}
+                    className={`${darkMode ? 'opacity-0 ' : ''} w-full h-auto object-cover`}
                 />
-                <div className='absolute inset-0 p-4'>
+                <div className='absolute inset-0 px-4 py-2'>
                     <div className='border-none'>
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
                         <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
