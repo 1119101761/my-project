@@ -6,12 +6,12 @@ export default function Biodata({ item }) {
     const { darkMode } = useContext(DarkModeContext);
 
     return (
-        <div key={item.nim} className="flex flex-col w-full h-full">
-            <div className='lg:row-span-2 sm:w-1/3 max-sm:p-2 max-sm:border-b-2 sm:border-r-2 lg:border-none border-gray-600 flex justify-center items-center'>
+        <div key={item.nim} className="flex flex-col">
+            <div className='lg:row-span-2 p-2 border-b-2 border-gray-600 flex justify-center items-center'>
                 <img
                     src={item.foto}
                     alt="Profile"
-                    className='border-2 md:rounded-br-full sm:border-none lg:rounded-lg rounded-full sm:rounded-none h-32 w-32 sm:h-full sm:w-full lg:h-auto lg:w-auto object-cover border-gray-600'
+                    className='border-2 rounded-full h-32 w-32 object-cover border-gray-600'
                 />
             </div>
             <div className='relative w-full h-full'>
@@ -24,7 +24,7 @@ export default function Biodata({ item }) {
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
                         <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
                     </div>
-                    <div className="font-bold border border-black overflow-y-auto w-full py-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar h-auto">
+                    <div className="font-bold border border-black overflow-hidden overflow-y-auto w-full py-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar h-auto">
                         <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Jurusan</div>
                             <div className="w-2 text-center">:</div>
