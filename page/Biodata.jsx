@@ -6,19 +6,20 @@ export default function Biodata({ item }) {
     const { darkMode } = useContext(DarkModeContext);
 
     return (
-        <div key={item.nim} className={`w-full h-[450px] sm:h-[440px] md:h-[440px] lg:h-[440px] ${darkMode ? 'bg-gray-800' : 'bg-orange-200 bg-opacity-35 '}`}>
-            <div className='lg:row-span-2 p-2 border-b-2 border-gray-600 flex justify-center items-center'>
+        <div
+            key={item.nim}
+            className={`w-full h-[450px] sm:h-[440px] md:h-[440px] lg:h-[440px] relative 
+            ${darkMode ? 'bg-gray-800' : 'bg-[url("z.jpg")] bg-cover bg-center invert'}
+        `}
+        >
+            <div className=' lg:row-span-2 p-2 border-b-2 border-gray-600 flex justify-center items-center'>
                 <img
                     src={item.foto}
                     alt="Profile"
-                    className={`${darkMode ? 'border-white' : ''} border-2 rounded-full h-32 w-32 object-cover border-gray-600`}
+                    className={`${darkMode ? 'border-white' : 'invert'} border-2 rounded-full h-32 w-32 object-cover border-gray-600`}
                 />
             </div>
-            <div className={`${darkMode ? '' : 'bg-gray-800'} relative h-auto bg-gray-800`}>
-                <img
-                    src={'z.jpg'}
-                    className={`${darkMode ? 'opacity-80 ' : ''} w-full h-auto object-cover`}
-                />
+            <div className={`${darkMode ? '' : 'bg-gray-800 invert'} relative h-auto `}>
                 <div className={`${darkMode ? 'bg-black bg-opacity-50' : 'text-black'}  px-4 absolute inset-0 `}>
                     <div className='border-none mt-2'>
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
@@ -35,7 +36,7 @@ export default function Biodata({ item }) {
                             <div className="w-2 text-center">:</div>
                             <div className="flex-grow w-24 break-words">{item.angkatan || 'Tidak ada info'}</div>
                         </div>
-                        
+
                         <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Jalur Kuliah</div>
                             <div className="w-2 text-center">:</div>
