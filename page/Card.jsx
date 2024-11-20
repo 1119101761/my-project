@@ -116,16 +116,13 @@ export default function Card({ item }) {
                                 </div>
                             </div>
                         )}
-
                     </div>
                 </div>
             </div>
-
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
-                    <div className={`${darkMode ? 'border-2 border-white bg-gray-800' : 'bg-white border-gray-700'} h-auto w-11/12 max-w-lg rounded-lg overflow-hidden  `}>
-                    
-                        <div className="flex justify-between items-center p-4 border-b">
+                    <div className={`${darkMode ? 'bg-gray-800 border-2 border-white ' : 'bg-orange-50  border-gray-700'} h-auto w-11/12 max-w-lg rounded-lg overflow-hidden`}>
+                        <div className={`${darkMode ? 'border-b-2 border-gray-600' : ''} flex justify-between items-center p-4`}>
                             <h2 className="text-lg font-bold">Biodata</h2>
                             <button onClick={closeModal} className={`${darkMode ? 'text-gray-400 hover:text-white' : ' text-gray-500 hover:text-gray-800'}`}>&times;</button>
                         </div>

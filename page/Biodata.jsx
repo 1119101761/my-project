@@ -9,23 +9,23 @@ export default function Biodata({ item }) {
         <div
             key={item.nim}
             className={`w-full h-[450px] sm:h-[440px] md:h-[440px] lg:h-[440px] relative 
-            ${darkMode ? 'bg-gray-800' : 'bg-[url("z.jpg")] bg-cover bg-center invert'}
+            ${darkMode ? 'bg-gray-800' : 'bg-[url("x.png")] bg-cover bg-center '}
         `}
         >
-            <div className=' lg:row-span-2 p-2 border-b-2 border-gray-600 flex justify-center items-center'>
+            <div className={`${darkMode ? 'border-b-2 border-gray-600' : 'border border-b-gray-700'} lg:row-span-2 p-2   flex justify-center items-center`}>
                 <img
                     src={item.foto}
                     alt="Profile"
-                    className={`${darkMode ? 'border-white' : 'invert'} border-2 rounded-full h-32 w-32 object-cover border-gray-600`}
+                    className={`${darkMode ? 'border-white' : ''} border-2 rounded-full h-32 w-32 object-cover border-gray-600`}
                 />
             </div>
-            <div className={`${darkMode ? '' : 'bg-gray-800 invert'} relative h-auto `}>
-                <div className={`${darkMode ? 'bg-black bg-opacity-50' : 'text-black'}  px-4 absolute inset-0 `}>
+            <div className={`${darkMode ? 'bg-black ' : ' '} relative h-auto `}>
+                <div className={`${darkMode ? 'bg-opacity-50' : 'text-black'}  px-4 absolute inset-0 `}>
                     <div className='border-none mt-2'>
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
                         <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
                     </div>
-                    <div className="h-[260px]  border border-black font-bold overflow-y-auto w-full mt-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar overflow-hidden ">
+                    <div className="h-[240px]  font-bold overflow-y-auto w-full mt-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar overflow-hidden ">
                         <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Jurusan</div>
                             <div className="w-2 text-center">:</div>
