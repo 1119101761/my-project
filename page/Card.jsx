@@ -122,7 +122,7 @@ export default function Card({ item }) {
             </div>
 
             {isModalOpen && (
-                <div className="fixed inset-0  z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
                     <div className={`${darkMode ? 'border-2 border-white bg-gray-800' : 'bg-white border-gray-700'} h-auto w-11/12 max-w-lg rounded-lg overflow-hidden  `}>
                         <div className="flex justify-between items-center p-4 border-b">
                             <h2 className="text-lg font-bold">Biodata</h2>
