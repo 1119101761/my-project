@@ -31,6 +31,21 @@ export default function Biodata({ item }) {
                             <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
                         </div>
                         <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Jurusan</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
+                        </div>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Jurusan</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
+                        </div>
+                        <div className="flex items-start flex-wrap">
+                            <div className="flex-grow w-10 sm:w-12">Jurusan</div>
+                            <div className="w-2 text-center">:</div>
+                            <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
+                        </div>
+                        <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Angkatan</div>
                             <div className="w-2 text-center">:</div>
                             <div className="flex-grow w-24 break-words">{item.angkatan || 'Tidak ada info'}</div>
