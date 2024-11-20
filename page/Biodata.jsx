@@ -6,7 +6,7 @@ export default function Biodata({ item }) {
     const { darkMode } = useContext(DarkModeContext);
 
     return (
-        <div key={item.nim} className={`w-full h-[480px] sm:h-[440px] md:h-[440px] lg:h-[440px] ${darkMode ? 'bg-gray-800' : 'bg-orange-200 bg-opacity-35 '}`}>
+        <div key={item.nim} className={`w-full h-[450px] sm:h-[440px] md:h-[440px] lg:h-[440px] ${darkMode ? 'bg-gray-800' : 'bg-orange-200 bg-opacity-35 '}`}>
             <div className='lg:row-span-2 p-2 border-b-2 border-gray-600 flex justify-center items-center'>
                 <img
                     src={item.foto}
@@ -16,8 +16,8 @@ export default function Biodata({ item }) {
             </div>
             <div className={`${darkMode ? '' : 'bg-gray-800'} relative h-auto bg-gray-800`}>
                 <img
-                    src={'Y.png'}
-                    className={`${darkMode ? 'opacity-0 ' : ''} w-full h-auto object-cover`}
+                    src={'z.jpg'}
+                    className={`${darkMode ? 'opacity-80 ' : ''} w-full h-auto object-cover`}
                 />
                 <div className={`${darkMode ? 'bg-black bg-opacity-50' : 'text-black'}  px-4 absolute inset-0 `}>
                     <div className='border-none mt-2'>
@@ -25,21 +25,6 @@ export default function Biodata({ item }) {
                         <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
                     </div>
                     <div className="h-[260px]  border border-black font-bold overflow-y-auto w-full mt-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar overflow-hidden ">
-                        <div className="flex items-start flex-wrap">
-                            <div className="flex-grow w-10 sm:w-12">Jurusan</div>
-                            <div className="w-2 text-center">:</div>
-                            <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
-                        </div>
-                        <div className="flex items-start flex-wrap">
-                            <div className="flex-grow w-10 sm:w-12">Jurusan</div>
-                            <div className="w-2 text-center">:</div>
-                            <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
-                        </div>
-                        <div className="flex items-start flex-wrap">
-                            <div className="flex-grow w-10 sm:w-12">Jurusan</div>
-                            <div className="w-2 text-center">:</div>
-                            <div className="flex-grow w-24 break-words">{item.jurusan || 'Tidak ada info'}</div>
-                        </div>
                         <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Jurusan</div>
                             <div className="w-2 text-center">:</div>
