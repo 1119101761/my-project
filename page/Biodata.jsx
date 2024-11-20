@@ -24,7 +24,7 @@ export default function Biodata({ item }) {
                         <p className="font-bold text-[12px] sm:text-xs md:text-xs lg:text-xs underline underline-offset-2">{item.nama}</p>
                         <p className="font-bold text-[10px] sm:text-[8px] md:text-[10px]">{item.nim}</p>
                     </div>
-                    <div className="h-[250px]  font-bold overflow-y-auto w-full mt-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar overflow-hidden ">
+                    <div className="h-[255px] sm:h-[250px] md:h-[250px] lg:h-[250px] font-bold overflow-y-auto w-full mt-2 flex flex-col space-y-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] no-scrollbar overflow-hidden ">
                         <div className="flex items-start flex-wrap">
                             <div className="flex-grow w-10 sm:w-12">Jurusan</div>
                             <div className="w-2 text-center">:</div>
