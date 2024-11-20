@@ -9,7 +9,7 @@ export default function Biodata({ item }) {
         <div
             key={item.nim}
             className={`w-full h-[450px] sm:h-[440px] md:h-[440px] lg:h-[440px] relative 
-            ${darkMode ? 'bg-gray-800' : 'bg-[url("x.png")] bg-cover bg-center '}
+            ${darkMode ? 'bg-gray-800' : 'bg-[url("Y.png")] bg-cover bg-center '}
         `}
         >
             <div className={`${darkMode ? 'border-b-2 border-gray-600' : 'border border-b-gray-700'} lg:row-span-2 p-2   flex justify-center items-center`}>
