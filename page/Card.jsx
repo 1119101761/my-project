@@ -1,39 +1,46 @@
 import { DarkModeContext } from './DarkModeContext';
 import { useContext, useState, useEffect } from 'react';
 import Biodata from './Biodata';
+import History from './History'; 
 import { supabase } from '../server';
 
 export default function Card({ item }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [modalType, setModalType] = useState(null);
     const { darkMode } = useContext(DarkModeContext);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
-    const fetchBiodata = async () => {
-        const { data, error } = await supabase
-            .from('mahasiswa')
-            .select('*')
-            .eq('nim', item.nim)
-        if (error) {
-            console.error("Error fetching biodata:", error);
-            return;
+    const fetchData = async (type) => {
+        try {
+            const { data, error } = await supabase
+                .from('mahasiswa')
+                .select('*')
+                .eq('nim', item.nim);
+
+            if (error) {
+                console.error(`Error fetching ${type}:`, error);
+                return;
+            }
+
+            setSelectedItem(data[0]);
+            setModalType(type);
+            setMenuOpen(false);
+            setIsModalOpen(true);
+        } catch (err) {
+            console.error('Unexpected error:', err);
         }
-        setSelectedItem(data[0]);
-        setMenuOpen(false);
-        setIsModalOpen(true);
-        console.log(data)
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedItem(null);
+        setModalType(null);
     };
-
-
 
     return (
 
@@ -111,8 +118,8 @@ export default function Card({ item }) {
                                 <a href="nilaipersemester" className="block px-4 py-2 hover:bg-gray-400">Nilai Per-Semester</a>
                                 <a href="detailFrs" className="block px-4 py-2 hover:bg-gray-400">Detail FRS</a>
                                 <div className='flex items-center w-full border-t border-gray-700 d'>
-                                    <button onClick={fetchBiodata} className="block border-r border-gray-700 px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-bl-md">Biodata</button>
-                                    <a href="history" className="block px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-br-md">History</a>
+                                    <button onClick={() => fetchData('Biodata')} className="block border-r border-gray-700 px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-bl-md">Biodata</button>
+                                    <button onClick={() => fetchData('History')} className="block border-gray-700 px-2 py-2 w-1/2 text-center hover:bg-gray-400 rounded-bl-md">History</button>
                                 </div>
                             </div>
                         )}
@@ -123,12 +130,12 @@ export default function Card({ item }) {
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
                     <div className={`${darkMode ? 'bg-gray-800 border-2 border-white ' : 'bg-orange-50  border-gray-700'} h-auto w-11/12 max-w-lg rounded-lg overflow-hidden`}>
                         <div className={`${darkMode ? 'border-b-2 border-gray-600' : ''} flex justify-between items-center p-4`}>
-                            <h2 className="text-lg font-bold">Biodata</h2>
+                            <h2 className="text-lg font-bold">{modalType}</h2>
                             <button onClick={closeModal} className={`${darkMode ? 'text-gray-400 hover:text-white' : ' text-gray-500 hover:text-gray-800'}`}>&times;</button>
                         </div>
                         <div className="">
-                            {selectedItem && <Biodata item={selectedItem} />}
-                        </div>
+                        {modalType === 'Biodata' && <Biodata item={selectedItem} />}
+                        {modalType === 'History' && <History item={selectedItem} />}                        </div>
                     </div>
                 </div>
             )}
