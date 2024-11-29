@@ -14,6 +14,7 @@ export default function Card({ item }) {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
+    
 
     const fetchData = async (type) => {
         try {
